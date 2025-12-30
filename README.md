@@ -1,81 +1,34 @@
 # Cloud Projects Repository
 
-Welcome to the **Cloud Project Repository**, which showcases various cloud-based solutions implemented using AWS. This repository contains solutions to common cloud challenges, covering areas such as hosting, scaling, security, and cost optimization.
+Projects in this repo are organized by folder. Each folder includes its own guide and assets.
 
-## Table of Contents
+## Contents
+- [Deploying WordPress on AWS EC2](Deploying%20WordPress%20on%20AWS%20EC2/GUIDE.md)
+- [S3 Static website Deployment](S3%20Static%20website%20Deployment/GUIDE.md)
 
-- [Project Overview](#project-overview)
-- [Deploying WordPress on AWS EC2](#deploying-wordpress-on-aws-ec2)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Setup and Deployment](#setup-and-deployment)
-- [Contributing](#contributing)
-- [License](#license)
+## Folder Overview
+- Deploying WordPress on AWS EC2/: Single-VM WordPress on Ubuntu 22.04 with Apache, PHP, MySQL. Includes setup guide and architecture/output assets.
+- S3 Static website Deployment/: Terraform stack for private S3 static hosting behind CloudFront with OAC, Route 53 aliases, and ACM DNS-validated cert.
 
+## How to Use
+1) Open the folder for the project you want to deploy.
+2) Read the GUIDE.md inside that folder for prerequisites and steps.
+3) Run the commands from the guide (Terraform for the static site; manual provisioning for WordPress EC2).
 
-## Project Overview
+## Project Details
 
-This repository currently focuses on deploying WordPress on AWS EC2 (Ubuntu 22.04) using Apache, PHP, and MySQL. See the featured section below and the full guide: [Deploying WordPress on AWS EC2/GUIDE.md](Deploying%20WordPress%20on%20AWS%20EC2/GUIDE.md).
-
-## Technologies Used
-
-- **AWS Services:** S3, EC2, Auto Scaling, RDS, IAM, CloudFront, Lambda, DynamoDB, AWS Backup, AWS EBS, AWS ELB.
-- **Infrastructure as Code:** AWS CloudFormation, Terraform.
-- **Scripting & Automation:** Python, Bash scripting.
-- **Security & Compliance:** IAM policies, security groups, encryption.
-
-## Setup and Deployment
-
-1. Clone this repository:
-   ```sh
-   git clone https://github.com/ShahidKhan232/cloud-project.git
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd cloud-project
-   ```
-3. Follow individual project setup guides available in their respective folders.
-4. Deploy AWS services using provided Terraform/CloudFormation scripts.
-5. Monitor and optimize resources using AWS CloudWatch and Cost Explorer.
-
-## Contributing
-
-Contributions are welcome! If you have ideas for improvements, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use and modify as needed.
-
----
-
-Feel free to explore, learn, and contribute to this cloud journey! 🚀
-
----
-
-## Deploying WordPress on AWS EC2
-
-Beginner-friendly deployment of WordPress on a single AWS EC2 (Ubuntu 22.04) instance using Apache, PHP, and MySQL.
-
+### Deploying WordPress on AWS EC2
 - Guide: [Deploying WordPress on AWS EC2/GUIDE.md](Deploying%20WordPress%20on%20AWS%20EC2/GUIDE.md)
-- Architecture:
+- Assets: [Architecture GIF](Deploying%20WordPress%20on%20AWS%20EC2/assets/Architecture.gif), [Output screenshot](Deploying%20WordPress%20on%20AWS%20EC2/assets/Output.png)
+- Notes: Basic single-instance setup; consider adding EIP, Route 53, and HTTPS via Certbot.
 
-![Architecture Overview](Deploying%20WordPress%20on%20AWS%20EC2/assets/Architecture.gif)
-
-- Quick Start:
-
-```bash
-ssh -i key.pem ubuntu@<EC2_PUBLIC_IP>
-```
-
-Open in browser after setup:
-
-```text
-http://<EC2_PUBLIC_IP>/wordpress/
-```
-
-- Ports: 22 (SSH), 80 (HTTP), 443 (HTTPS)
-- Optional: Elastic IP, Route 53, HTTPS via Certbot
-
-Screenshots:
-
-![WordPress Output](Deploying%20WordPress%20on%20AWS%20EC2/assets/Output.png)
+### S3 Static Website Deployment (Terraform)
+- Guide: [S3 Static website Deployment/GUIDE.md](S3%20Static%20website%20Deployment/GUIDE.md)
+- Stack: Private S3 bucket, CloudFront OAC, ACM cert in us-east-1, Route 53 apex and www aliases, remote state in S3 with DynamoDB lock.
+- Quick start:
+	```bash
+	cd "S3 Static website Deployment"
+	terraform init
+	terraform apply -var "bucket-name=<unique>" -var "domain-name=example.com"
+	```
+- Output: `cloudfront_url` for CDN testing while DNS propagates.
