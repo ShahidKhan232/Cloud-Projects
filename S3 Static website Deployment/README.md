@@ -6,6 +6,7 @@ This guide walks through deploying the bundled static site to S3 behind CloudFro
 - ACM certificate (DNS validated) in `us-east-1`
 - Route 53 A/ALIAS records for apex and `www` pointing at CloudFront
 
+![Architecture Overview](assets/AWS-Infra-Diagram.gif)
 ## Prerequisites
 - AWS account with a registered domain in Route 53 (public hosted zone)
 - AWS CLI configured with credentials/region
@@ -71,6 +72,8 @@ The bucket uses `force_destroy = true` in [bucket-creation.tf](bucket-creation.t
 ## Outputs
 - `cloudfront_url`: CDN domain from [cloudfront-distribution.tf](cloudfront-distribution.tf#L56-L58).
 
+
+![Output](assets/ouput.png)
 ## Troubleshooting
 - ACM validation pending: check CNAMEs created in Route 53 from [route53.tf](route53.tf#L1-L43).
 - CloudFront 403: ensure OAC is attached and S3 bucket policy matches [bucket-creation.tf](bucket-creation.tf#L17-L39).
