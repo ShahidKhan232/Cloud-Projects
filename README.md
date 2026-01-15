@@ -52,6 +52,16 @@ A comprehensive collection of AWS infrastructure and application projects demons
 - SNS notifications for cost insights
 - IAM security policies with least privilege
 
+### 7. [Two-Tier Architecture](Two-Tier-Architecture/README.md)
+**Production-Ready High-Availability Application Infrastructure**
+- Multi-AZ deployment with Auto Scaling
+- Aurora MySQL RDS cluster with read replicas
+- Application Load Balancer with health checks
+- CloudFront CDN with Route53 and ACM
+- Complete infrastructure automation with modular Terraform
+- WAF protection and security best practices
+- CloudWatch monitoring and auto-scaling policies
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -81,6 +91,7 @@ A comprehensive collection of AWS infrastructure and application projects demons
 | Image Recognition | Processing | Serverless | Lambda, Rekognition, S3, SNS | ✅ |
 | Image Resize | Processing | Serverless | Lambda, S3, SNS | ✅ |
 | EBS Optimization | Automation | Serverless | Lambda, SNS, CloudWatch | ✅ |
+| Two-Tier Architecture | Application | Highly Available | VPC, EC2, RDS, ALB, CloudFront | ✅ |
 
 ## 🔐 Security Highlights
 
@@ -98,14 +109,15 @@ A comprehensive collection of AWS infrastructure and application projects demons
 - **Image Recognition**: $0.20 + Rekognition charges
 - **Image Resize**: $0.20 + data transfer
 - **EBS Optimization**: < $1
+- **Two-Tier Architecture**: $150-250 (RDS db.r5.large, ALB, NAT, EC2, CloudFront)
 
 *Costs vary based on usage and configuration*
 
 ## 📚 Learning Paths
 
-**Beginner**: Start with S3 Static Website or AWS Cost Reporting
-**Intermediate**: Try Image Resize or EBS Optimization
-**Advanced**: Intelligent Image Recognition System or WordPress EC2
+**Beginner**: Start with S3 Static Website or AWS Cost Reporting  
+**Intermediate**: Try Image Resize, EBS Optimization, or WordPress EC2  
+**Advanced**: Intelligent Image Recognition System or Two-Tier Architecture
 
 ## 🛠️ Common Tasks
 

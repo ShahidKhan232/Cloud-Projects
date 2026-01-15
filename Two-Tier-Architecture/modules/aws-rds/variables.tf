@@ -1,0 +1,9 @@
+variable "sg-name" {}
+variable "vpc-name" {}
+variable "private-subnet-name1" {}
+variable "private-subnet-name2" {}
+variable "db-sg-id" {}
+variable "rds-username" {}
+variable "rds-pwd" {}
+variable "db-name" {}
+variable "rds-name" {}
