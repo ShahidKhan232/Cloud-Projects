@@ -62,6 +62,14 @@ A comprehensive collection of AWS infrastructure and application projects demons
 - WAF protection and security best practices
 - CloudWatch monitoring and auto-scaling policies
 
+### 8. [Three-Tier Architecture](Three-Tier-Architecture/README.md)
+**Enterprise-Grade Web, App, and Database Stack**
+- VPC with public and private subnets across multiple AZs
+- Auto Scaling groups for web and app tiers behind ALB
+- RDS MySQL multi-AZ with read replica option
+- CloudFront, WAF, ACM, and Route53 for secure global delivery
+- Modular Terraform with reusable network, security, and compute components
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -92,6 +100,7 @@ A comprehensive collection of AWS infrastructure and application projects demons
 | Image Resize | Processing | Serverless | Lambda, S3, SNS | ✅ |
 | EBS Optimization | Automation | Serverless | Lambda, SNS, CloudWatch | ✅ |
 | Two-Tier Architecture | Application | Highly Available | VPC, EC2, RDS, ALB, CloudFront | ✅ |
+| Three-Tier Architecture | Application | Web + App + DB | VPC, EC2, ALB, RDS, CloudFront, WAF | ✅ |
 
 ## 🔐 Security Highlights
 
@@ -110,6 +119,7 @@ A comprehensive collection of AWS infrastructure and application projects demons
 - **Image Resize**: $0.20 + data transfer
 - **EBS Optimization**: < $1
 - **Two-Tier Architecture**: $150-250 (RDS db.r5.large, ALB, NAT, EC2, CloudFront)
+- **Three-Tier Architecture**: $250-400 (additional app tier ASG + network egress)
 
 *Costs vary based on usage and configuration*
 
@@ -117,7 +127,7 @@ A comprehensive collection of AWS infrastructure and application projects demons
 
 **Beginner**: Start with S3 Static Website or AWS Cost Reporting  
 **Intermediate**: Try Image Resize, EBS Optimization, or WordPress EC2  
-**Advanced**: Intelligent Image Recognition System or Two-Tier Architecture
+**Advanced**: Intelligent Image Recognition System, Two-Tier Architecture, or Three-Tier Architecture
 
 ## 🛠️ Common Tasks
 
