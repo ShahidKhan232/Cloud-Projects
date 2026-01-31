@@ -70,6 +70,17 @@ A comprehensive collection of AWS infrastructure and application projects demons
 - CloudFront, WAF, ACM, and Route53 for secure global delivery
 - Modular Terraform with reusable network, security, and compute components
 
+### 9. [AWS Serverless Application](AWS-Serverless/README.md)
+**Full-Stack Serverless Student Management System**
+- Complete serverless architecture with Lambda and DynamoDB
+- API Gateway REST API with CORS support
+- AWS Amplify frontend hosting with CodeCommit integration
+- CloudFront CDN with Route53 and ACM for custom domain
+- Automated CI/CD pipeline with auto-build on commits
+- Scoped IAM policies with least privilege
+- CloudWatch logging and monitoring
+- Infrastructure as Code with comprehensive Terraform
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -101,6 +112,7 @@ A comprehensive collection of AWS infrastructure and application projects demons
 | EBS Optimization | Automation | Serverless | Lambda, SNS, CloudWatch | ✅ |
 | Two-Tier Architecture | Application | Highly Available | VPC, EC2, RDS, ALB, CloudFront | ✅ |
 | Three-Tier Architecture | Application | Web + App + DB | VPC, EC2, ALB, RDS, CloudFront, WAF | ✅ |
+| AWS Serverless | Full-Stack App | Serverless | Lambda, API Gateway, DynamoDB, Amplify, CodeCommit, CloudFront | ✅ |
 
 ## 🔐 Security Highlights
 
@@ -117,6 +129,7 @@ A comprehensive collection of AWS infrastructure and application projects demons
 - **S3 Static Website**: $5-15 (S3 + CloudFront)
 - **Image Recognition**: $0.20 + Rekognition charges
 - **Image Resize**: $0.20 + data transfer
+- **AWS Serverless**: $2-10 (Lambda, API Gateway, DynamoDB on-demand, Amplify, CloudFront)
 - **EBS Optimization**: < $1
 - **Two-Tier Architecture**: $150-250 (RDS db.r5.large, ALB, NAT, EC2, CloudFront)
 - **Three-Tier Architecture**: $250-400 (additional app tier ASG + network egress)
@@ -125,7 +138,7 @@ A comprehensive collection of AWS infrastructure and application projects demons
 
 ## 📚 Learning Paths
 
-**Beginner**: Start with S3 Static Website or AWS Cost Reporting  
+**Beginner**: Start with S3 Static Website or AWS CostWordPress EC2, or AWS Serverless
 **Intermediate**: Try Image Resize, EBS Optimization, or WordPress EC2  
 **Advanced**: Intelligent Image Recognition System, Two-Tier Architecture, or Three-Tier Architecture
 
